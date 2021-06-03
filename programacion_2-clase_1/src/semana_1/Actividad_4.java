@@ -24,6 +24,7 @@ public class Actividad_4 {
 					}else {
 						for (int i = valor2; i <= valor1 ; i++) {
 							if (i%5!=0) {
+								System.out.println("valores sin multiplos de 5");
 								System.out.println(i);
 							}
 			}

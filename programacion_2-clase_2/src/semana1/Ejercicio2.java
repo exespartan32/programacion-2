@@ -4,10 +4,11 @@ import java.util.Scanner;
 
 public class Ejercicio2 {
 	public static void main(String[] args) {
-		Scanner teclado = new Scanner (System.in);
+		Scanner entry = new Scanner (System.in);
 		
 		//declaramos los vectores y variabeles a utilizar
 		String user1, user2, user3, user4, pass1, pass2, pass3, pass4,  usuarios, contraseñas;
+		int option, newCon1, newCon2, newCon3, newCon4;
 		String user[] = {"daiana", "facundo", "osvaldo", "melina"}; 
 		int pass[] = new int [4];
 		pass[0]=1234;
@@ -17,24 +18,24 @@ public class Ejercicio2 {
 	
 		//ingresamos los usuarios
 		System.out.println("por faver ingrese el primer usuario usuario");
-			user1 = teclado.next();
+			user1 = entry.next();
 		System.out.println("porfavor ingrese la primer contraseña");
-			pass1 = teclado.next();
+			pass1 = entry.next();
 			
 		System.out.println("por faver ingrese el segundo usuario usuario");
-			user2 = teclado.next();
+			user2 = entry.next();
 		System.out.println("porfavor ingrese la segunda contraseña");
-			pass2 = teclado.next();
+			pass2 = entry.next();
 			
 		System.out.println("por faver ingrese el tercer usuario usuario");
-			user3 = teclado.next();
+			user3 = entry.next();
 		System.out.println("porfavor ingrese la tercer contraseña");
-			pass3 = teclado.next();
+			pass3 = entry.next();
 			
 		System.out.println("por faver ingrese el cuarto usuario usuario");
-			user4 = teclado.next();
+			user4 = entry.next();
 		System.out.println("porfavor ingrese la cuarta contraseña");
-			pass4 = teclado.next();
+			pass4 = entry.next();
 			
 		String contraseña1 = String.valueOf(pass[0]);
 		String contraseña2 = String.valueOf(pass[1]);
@@ -79,6 +80,41 @@ public class Ejercicio2 {
 			System.out.println("el nombre del cuarto usuario es incorrecto");
 		}else if (pass4!=contraseña4) {
 			System.out.println("la contraseña del cuarto usuario es incorrecta");
+		}
+		
+		System.out.println("si quiere cambiar la contraseña de algun usuario, coloque alguna de las siguientes opciones");
+		System.out.println("1-cambiar contraseña del primer usuario");
+		System.out.println("1-cambiar contraseña del segundo usuario");
+		System.out.println("1-cambiar contraseña del tercer usuario");
+		System.out.println("1-cambiar contraseña del cuarto usuario");
+		option = entry.nextInt();
+		
+		
+		switch(option) {
+		case 1:
+			System.out.println("ingrese la nueva contraseña");
+				newCon1 = entry.nextInt();
+			System.out.println("..........................................");	
+			System.out.println("la contraseña: "+pass[0]+" ha sido cambiado exitosamente por: "+newCon1);
+			break;
+		case 2:
+			System.out.println("ingrese la nueva contraseña");
+				newCon2 = entry.nextInt();
+			System.out.println("..........................................");	
+			System.out.println("la contraseña: "+pass[1]+" ha sido cambiado exitosamente por: "+newCon2);
+			break;
+		case 3:
+			System.out.println("ingrese la nueva contraseña");
+				newCon3 = entry.nextInt();
+			System.out.println("..........................................");	
+			System.out.println("la contraseña: "+pass[2]+" ha sido cambiado exitosamente por: "+newCon3);
+			break;	
+		case 4:
+			System.out.println("ingrese la nueva contraseña");
+				newCon4 = entry.nextInt();
+			System.out.println("..........................................");	
+			System.out.println("la contraseña: "+pass[3]+" ha sido cambiado exitosamente por: "+newCon4);
+			break;
 		}
 	}
 }

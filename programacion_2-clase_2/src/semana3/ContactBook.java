@@ -1,14 +1,12 @@
 package semana3;
 
-public class ContactBook extends Contact{
+public class ContactBook {
 	private String nameList;
-	
-	public ContactBook(String name, String email, String mobil, boolean topList, String nameList) {
-		super(name, email, mobil, topList);
+
+	public ContactBook(String nameList) {
+		super();
 		this.nameList = nameList;
 	}
-
-
 	public String getName() {
 		return nameList;
 	}
