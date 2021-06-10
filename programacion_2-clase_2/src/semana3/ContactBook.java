@@ -26,7 +26,7 @@ public class ContactBook {
 	}
 	@Override
 	public String toString() {
-		return "el nombre de la libreta de contacto es: "+ nameList;
+		return "the name of the contact book is:  "+ nameList;
 	}
 	
 	

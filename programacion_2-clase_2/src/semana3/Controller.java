@@ -6,12 +6,14 @@ public class Controller {
 	int conBookReceived = View.menu();
 	System.out.println(conBookReceived);
 	
-	ContactBook miCB = View.createContactBook(new ContactBook());
+	
+	if(conBookReceived == 1) {
+		ContactBook miCB = View.createContactBook(new ContactBook());
 	System.out.println(miCB);
-	
-	/*View.addingContactBook(null);
-	*/
-	
-	
+	}
+	else if (conBookReceived == 2) {
+		Contact miCon = View.addingContactBook(new Contact());
+	System.out.println(miCon);
+		}
 	}
 }

@@ -6,13 +6,14 @@ public class Contact {
 	private String mobil;
 	private boolean topList;
 
-	public Contact(String name, String email, String mobil, boolean topList) {
+	/*public Contact(String name, String email, String mobil, boolean topList) {
 		super();
 		this.name = name;
 		this.email = email;
 		this.mobil = mobil;
 		this.topList = topList;
 	}
+	*/
 	public String getName() {
 		return name;
 	}
@@ -39,8 +40,8 @@ public class Contact {
 	}
 	@Override
 	public String toString() {
-		return "\n nombre: "+name+"\n email: "+email+"\n numero de telefono: "+mobil+
-				"\n ¿pertenece a la top list? "+topList;
+		return "\n name: "+name+"\n email: "+email+"\n phone number: "+mobil+
+				"\n Does it belong to the top list?  "+topList;
 	}
 	@Override
 	public boolean equals(Object obj) {
