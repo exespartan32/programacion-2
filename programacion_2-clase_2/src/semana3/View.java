@@ -20,10 +20,10 @@ public class View {
 		System.out.println("ingrese le nombre de la libreta de contacto");
 		String newNomCon = entry1.nextLine();
 		
-		ContactBook book1 = new ContactBook(newNomCon);
+		//ContactBook book1 = new ContactBook(newNomCon);
 		System.out.println("...................................................");
-		System.out.println("el nombre de la libreta de contacto: "+newNomCon+" se guerdo correctamente");
-		
+		System.out.println("el nombre de la libreta de contacto "+newNomCon+" se guerdo correctamente");
+		conBook1.setName(newNomCon);
 		return conBook1;
 	}
 	
