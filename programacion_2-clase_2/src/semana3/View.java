@@ -1,22 +1,33 @@
 package semana3;
 
+import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class View {
 	public static int menu() {
-		int option;
+		int option = 0;
 		
+		
+	try {
 		Scanner entry = new Scanner (System.in);
 		System.out.println("enter any of the following options ");
 		System.out.println("1-add new contact book ");
 		System.out.println("2-add new contract to contact book ");
-		option = entry.nextInt();		
+		option = entry.nextInt();
+				
+		} catch (InputMismatchException e) {
+			System.out.println("error");
+			System.out.println("usted a colocado una letra");
+			System.out.println("¡debe colocar un numero¡");
+		}		
 		return option;
 	}
 	
 	public static ContactBook createContactBook(ContactBook conBook1) {
 		Scanner entry1 = new Scanner (System.in);
 		
+	
 		System.out.println("enter the name of the contact book ");
 		String newNomCon = entry1.nextLine();
 		
@@ -24,13 +35,19 @@ public class View {
 		System.out.println("...................................................");
 		System.out.println("the name of the contact book  "+newNomCon+" it was plump correctly ");
 		conBook1.setName(newNomCon);
+		
+			
 		return conBook1;
+	
 	}
 	
-	public static Contact addingContactBook(Contact cont1) {
+	public static ContactBook addingContactBook(ContactBook cont1) {
+		
+		ArrayList contacts = new ArrayList();	
+		
 		Scanner entry2 = new Scanner (System.in);
 		String name, mail, mob;
-		int option;
+		int option = 0;
 		boolean topList= false;
 		
 		System.out.println("enter the contact details to save ");
@@ -40,12 +57,14 @@ public class View {
 			mail = entry2.nextLine();
 		System.out.println("phone number:");
 			mob = entry2.nextLine();
+			
+			try {
 		System.out.println("Do you want to save it to topList? ");
 		System.out.println("1-yes");
 		System.out.println("2-no");
-			option = entry2.nextInt();
-		
-		switch(option) {
+			option = entry2.nextInt();	
+			
+			switch(option) {
 			case 1:	
 				topList = true;
 				break;
@@ -53,12 +72,23 @@ public class View {
 				topList = false;
 				break;
 		}
-		cont1.setName(name);
-		cont1.setEmail(mail);
-		cont1.setMobil(mob);
-		cont1.setTopList(topList);
+				} catch (InputMismatchException|NullPointerException e) {
+					System.out.println("error");
+					System.out.println("usted a colocado una letra");
+					System.out.println("¡debe colocar un numero¡");
+				}
 		
-		//Contact contact1 = new Contact (name, mail, mob, topList);
+		
+		
+		Contact contact1 = new Contact(name, mail, mob, topList);
+		//contact1.setName(name);
+		//contact1.setEmail(mail);
+		//contact1.setMobil(mob);
+		//contact1.setTopList(topList);
+		
+		//contacts.add(contact1);
+		cont1.addContact(contact1);
+		
 		return cont1;
 	}
 }

@@ -6,14 +6,14 @@ public class Contact {
 	private String mobil;
 	private boolean topList;
 
-	/*public Contact(String name, String email, String mobil, boolean topList) {
+	public Contact(String name, String email, String mobil, boolean topList) {
 		super();
 		this.name = name;
 		this.email = email;
 		this.mobil = mobil;
 		this.topList = topList;
 	}
-	*/
+	
 	public String getName() {
 		return name;
 	}
