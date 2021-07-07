@@ -44,7 +44,7 @@ public class Contact {
 				"\n Does it belong to the top list?  "+topList;
 	}
 	
-	public String toStringSeparador(String sep) {
+	public String toString(String sep) {
 		return this.name+sep+this.email+sep+this.mobil+sep+this.topList;
 	}
 	

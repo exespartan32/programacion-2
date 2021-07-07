@@ -45,13 +45,13 @@ public class ContactBook {
 		}	
 	}	
 	
-	public String toStringSeparador(String sep) {
+	public String toString(String sep) {
 		String st_CB="";
 		for(int i =0;i<contacts.size();i++) {
 			if(i==this.contacts.size()-1) {
-				st_CB = st_CB + this.contacts.get(i).toStringSeparador("#");
+				st_CB = st_CB + this.contacts.get(i).toString("#");
 			}else {
-				st_CB = st_CB + this.contacts.get(i).toStringSeparador("#")+sep;
+				st_CB = st_CB + this.contacts.get(i).toString("#")+sep;
 			}
 		}
 		return st_CB;

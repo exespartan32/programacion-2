@@ -74,8 +74,8 @@ public class View {
 		}
 				} catch (InputMismatchException|NullPointerException e) {
 					System.out.println("error");
-					System.out.println("usted a colocado una letra");
-					System.out.println("¡debe colocar un numero¡");
+					System.out.println("you have entered a letter ");
+					System.out.println("¡must put a number¡");
 				}
 		
 		
@@ -93,11 +93,11 @@ public class View {
 		
 		}catch(NullPointerException e) {
 			System.out.println("!error!");
-			System.out.println("primero debe crear la libreta de contacto para poder guarar el contacto");
+			System.out.println("You must first create the contact book to be able to save the contact ");
 		}
 		return cont1;
 	}
-	public static ContactBook listContactBook(ContactBook saveCont) {
-		return null;
+	public static void listContactBook(ContactBook saveCont) {
+		System.out.println("los datos guardados en la libreta de contacto "+saveCont.getName()+" son:");
 	}
 }

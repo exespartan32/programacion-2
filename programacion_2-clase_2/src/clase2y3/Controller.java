@@ -21,11 +21,15 @@ public class Controller {
 		else if (conBookReceived == 2) {				
 			ContactBook miCon = View.addingContactBook(miCB);
 				System.out.println(miCon);
+				DataModel.saveCB(miCon);
 				//String st_contacts = MiContact.toStringSeparador("#");		
-				
 			}
 		else if (conBookReceived == 3) {
 			
+			View.listContactBook(miCB);
+			String Strin_CBName = miCB.getName()+".txt";
+			DataModel.loadCB(Strin_CBName);
+			System.out.println("");
 			}
 		}while(true);	
 	
