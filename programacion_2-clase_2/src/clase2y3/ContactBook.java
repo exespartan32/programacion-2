@@ -1,4 +1,4 @@
-package semana3;
+package clase2y3;
 
 import java.util.ArrayList;
 
@@ -34,13 +34,26 @@ public class ContactBook {
 	}
 	@Override
 	public String toString() {
-		String tmp = null;
+		String tmp="";
 		for (int i=0;i<contacts.size();i++) {
 			tmp = tmp+contacts.get(i).toString();
+		}
+		if (tmp == "") {
+			return "the name of the contact book is:  "+ this.name;
+		}else {
+			return "the name of the contact book is:  "+ this.name+" "+tmp;
 		}	
-			
-		return "the name of the contact book is:  "+ this.name+" "+tmp;
-	
 	}	
 	
+	public String toStringSeparador(String sep) {
+		String st_CB="";
+		for(int i =0;i<contacts.size();i++) {
+			if(i==this.contacts.size()-1) {
+				st_CB = st_CB + this.contacts.get(i).toStringSeparador("#");
+			}else {
+				st_CB = st_CB + this.contacts.get(i).toStringSeparador("#")+sep;
+			}
+		}
+		return st_CB;
+	}	
 }

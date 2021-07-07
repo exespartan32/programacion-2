@@ -1,4 +1,4 @@
-package semana3;
+package clase2y3;
 
 import java.util.ArrayList;
 import java.util.InputMismatchException;
@@ -8,12 +8,12 @@ public class View {
 	public static int menu() {
 		int option = 0;
 		
-		
 	try {
 		Scanner entry = new Scanner (System.in);
 		System.out.println("enter any of the following options ");
 		System.out.println("1-add new contact book ");
 		System.out.println("2-add new contract to contact book ");
+		System.out.println("3-list Contact Book");
 		option = entry.nextInt();
 				
 		} catch (InputMismatchException e) {
@@ -43,7 +43,7 @@ public class View {
 	
 	public static ContactBook addingContactBook(ContactBook cont1) {
 		
-		ArrayList contacts = new ArrayList();	
+		//ArrayList contacts = new ArrayList();	
 		
 		Scanner entry2 = new Scanner (System.in);
 		String name, mail, mob;
@@ -87,8 +87,17 @@ public class View {
 		//contact1.setTopList(topList);
 		
 		//contacts.add(contact1);
+		try {
 		cont1.addContact(contact1);
 		
+		
+		}catch(NullPointerException e) {
+			System.out.println("!error!");
+			System.out.println("primero debe crear la libreta de contacto para poder guarar el contacto");
+		}
 		return cont1;
+	}
+	public static ContactBook listContactBook(ContactBook saveCont) {
+		return null;
 	}
 }

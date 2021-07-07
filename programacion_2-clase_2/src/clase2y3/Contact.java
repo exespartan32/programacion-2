@@ -1,4 +1,4 @@
-package semana3;
+package clase2y3;
 
 public class Contact {
 	private String name;
@@ -43,6 +43,13 @@ public class Contact {
 		return "\n name: "+name+"\n email: "+email+"\n phone number: "+mobil+
 				"\n Does it belong to the top list?  "+topList;
 	}
+	
+	public String toStringSeparador(String sep) {
+		return this.name+sep+this.email+sep+this.mobil+sep+this.topList;
+	}
+	
+	
+	
 	@Override
 	public boolean equals(Object obj) {
 		Contact other = (Contact) obj;
