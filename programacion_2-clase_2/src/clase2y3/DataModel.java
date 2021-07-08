@@ -14,16 +14,21 @@ public class DataModel {
 		
 	}
 	
-	public static void loadCB(String strin_CBName) {
-		String nombre = strin_CBName;		
-		String Datos = GestorArchivos.cargar(nombre);		
-		String separador2 = "#";
+	public static ContactBook loadCB(String strin_CBName) {
+		String Datos = GestorArchivos.cargar(strin_CBName);		
+		String separador2 = "&%&";
 		
-		ArrayList<String> datosAfiliado = GestorArchivos.desempaquetador(Datos, separador2);
+		String[] contact = Datos.split(separador2);
 		
-		for(int i=0;i<datosAfiliado.size();i++) {
-			System.out.println("--> " + datosAfiliado.get(i));		
+		ContactBook listCB = new ContactBook();	
+		
+		for(int i=0;i<contact.length;i++) {
+			//System.out.println(i+"-->"+contact[i]+"<--"+i);
+				String[] list = contact[i].split("#");
+				Contact conlis = new Contact(list[0], list[1], list[2], Boolean.parseBoolean(list[3]));	
+				listCB.addContact(conlis);
 		}
+		return listCB;
 	}
 	
 	

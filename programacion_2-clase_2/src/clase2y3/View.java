@@ -34,6 +34,10 @@ public class View {
 		//ContactBook book1 = new ContactBook(newNomCon);
 		System.out.println("...................................................");
 		System.out.println("the name of the contact book  "+newNomCon+" it was plump correctly ");
+		
+		//se perdera el nombre de la libreta para comodidad del codigo
+		newNomCon = "unicaLibreta";
+		
 		conBook1.setName(newNomCon);
 		
 			
@@ -98,6 +102,7 @@ public class View {
 		return cont1;
 	}
 	public static void listContactBook(ContactBook saveCont) {
-		System.out.println("los datos guardados en la libreta de contacto "+saveCont.getName()+" son:");
+		System.out.println("los datos guardados en la libreta de contacto unicaLibreta son:");
+		System.out.println(saveCont);
 	}
 }

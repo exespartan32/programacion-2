@@ -26,9 +26,10 @@ public class Controller {
 			}
 		else if (conBookReceived == 3) {
 			
-			View.listContactBook(miCB);
-			String Strin_CBName = miCB.getName()+".txt";
-			DataModel.loadCB(Strin_CBName);
+			
+			String CBName = "unicaLibreta.txt";
+			ContactBook list = DataModel.loadCB(CBName);
+			View.listContactBook(list);
 			System.out.println("");
 			}
 		}while(true);	
