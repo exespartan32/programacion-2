@@ -1,16 +1,29 @@
-package clase2y3;
+package semana1;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.util.ArrayList;
 
 public class DataModel {
+	
+	
+	public static void saveNameCB(ContactBook CBName) {
+		String data = CBName.ListNameCB("##");
+		String name = "Name ContactBook,txt";
+		
+		GestorArchivos.guardar(name, data);
+
+	/*	ArrayList NameCB = new ArrayList();
+		NameCB.add(data);		
+		GestorArchivos.empaquetador(NameCB, "#");	*/	
+	}
 
 	
 	public static void saveCB(ContactBook sCB) {
 		String dataContact = sCB.toString("&%&");
 		String nombre = sCB.getName()+".txt";
 		
-		String data = dataContact;
-		GestorArchivos.guardar(nombre, data);
+		GestorArchivos.guardar(nombre, dataContact);		
 		
 	}
 	
@@ -29,6 +42,11 @@ public class DataModel {
 				listCB.addContact(conlis);
 		}
 		return listCB;
+	}
+	
+	public static ArrayList<String> listCB(){
+		
+		return null;		
 	}
 	
 	

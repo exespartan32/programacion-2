@@ -1,4 +1,4 @@
-package clase2y3;
+package semana1;
 
 
 public class Controller {
@@ -6,8 +6,8 @@ public class Controller {
 		
 		ContactBook miCB = null;
 	
-	System.out.println("considere que para guardar un contacto primero tiene que crear la libreta de contactos");
-	System.out.println("");
+	//System.out.println("considere que para guardar un contacto primero tiene que crear la libreta de contactos");
+	//System.out.println("");
 	
 	do{		
 		int conBookReceived = View.menu();
@@ -16,6 +16,9 @@ public class Controller {
 		if(conBookReceived == 1) {
 			miCB = View.createContactBook(new ContactBook());
 				System.out.println(miCB);
+				
+				DataModel.saveNameCB(miCB);
+				
 				System.out.println("");
 			}
 		else if (conBookReceived == 2) {				
@@ -24,8 +27,7 @@ public class Controller {
 				DataModel.saveCB(miCon);
 				//String st_contacts = MiContact.toStringSeparador("#");		
 			}
-		else if (conBookReceived == 3) {
-			
+		else if (conBookReceived == 3) {			
 			
 			String CBName = "unicaLibreta.txt";
 			ContactBook list = DataModel.loadCB(CBName);
