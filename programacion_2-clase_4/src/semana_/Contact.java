@@ -1,4 +1,4 @@
-package semana1;
+package semana_;
 
 public class Contact {
 	private String name;
@@ -47,6 +47,7 @@ public class Contact {
 	public String toString(String sep) {
 		return this.name+sep+this.email+sep+this.mobil+sep+this.topList;
 	}
+	
 	
 	
 	@Override

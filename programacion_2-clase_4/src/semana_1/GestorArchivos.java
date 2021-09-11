@@ -2,6 +2,7 @@ package semana_1;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -113,5 +114,27 @@ public class GestorArchivos {
         String leido = cargar(nombreArchivo);
         ArrayList<String> retorno = desempaquetador(leido,"#");
         return retorno;
+    }
+    
+    public static void exists() {
+
+        try{
+            File carpeta = new File("D:/programacion 2/");
+
+            String[] listado = carpeta.list();
+            if (listado == null || listado.length == 0) {
+                System.out.println("No existen ContactBooks");
+                return;
+            }
+            else {
+            	System.out.println("los ContactBooks existentes son:");
+                for (int i = 0; i < listado.length; i++) {
+                    System.out.println(listado[i]);
+                }
+            }
+
+        }catch (NullPointerException e){
+            System.out.println("ERROR!");
+        }
     }
 }

@@ -1,4 +1,4 @@
-package semana1;
+package semana_;
 
 import java.util.ArrayList;
 import java.util.InputMismatchException;
@@ -14,6 +14,7 @@ public class View {
 		System.out.println("1-add new contact book ");
 		System.out.println("2-add new contract to contact book ");
 		System.out.println("3-list Contact Book");
+		System.out.println("0-Exit");
 		option = entry.nextInt();
 				
 		} catch (InputMismatchException e) {
@@ -25,7 +26,8 @@ public class View {
 	}
 	
 	public static ContactBook createContactBook(ContactBook conBook1) {
-		Scanner entry1 = new Scanner (System.in);		
+		Scanner entry1 = new Scanner (System.in);
+		
 	
 		System.out.println("enter the name of the contact book ");
 		String newNomCon = entry1.nextLine();
@@ -33,15 +35,8 @@ public class View {
 		//ContactBook book1 = new ContactBook(newNomCon);
 		System.out.println("...................................................");
 		System.out.println("the name of the contact book  "+newNomCon+" it was plump correctly ");
-		
-		//se perdera el nombre de la libreta para comodidad del codigo
-		//newNomCon = "unicaLibreta";
-		
-		conBook1.setName(newNomCon);
-		conBook1.AddNameCB(newNomCon);
-		
-		
-						
+				
+		conBook1.setName(newNomCon);			
 		return conBook1;	
 	}
 	
@@ -85,6 +80,12 @@ public class View {
 		
 		
 		Contact contact1 = new Contact(name, mail, mob, topList);
+		//contact1.setName(name);
+		//contact1.setEmail(mail);
+		//contact1.setMobil(mob);
+		//contact1.setTopList(topList);
+		
+		//contacts.add(contact1);
 		try {
 		cont1.addContact(contact1);
 		
@@ -95,8 +96,16 @@ public class View {
 		}
 		return cont1;
 	}
-	public static void listContactBook(ContactBook saveCont) {
-		System.out.println("los datos guardados en la libreta de contacto unicaLibreta son:");
-		System.out.println(saveCont);
+	public static String listContactBook(String[] saveCont) {
+		Scanner entry3 = new Scanner (System.in);
+		String name;
+		//System.out.println(saveCont);
+		System.out.println("coloque el nombre de la libreta que desea ver (sin el .txt)");
+			name = entry3.nextLine();
+		return name+".txt";
+	}
+	public static void listContact(ContactBook list) {
+		System.out.println("los datos guardados en la libreta seleccionada son: ");
+		System.out.println(list);
 	}
 }

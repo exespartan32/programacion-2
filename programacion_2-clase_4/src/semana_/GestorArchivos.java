@@ -1,7 +1,8 @@
-package semana1;
+package semana_;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -48,7 +49,7 @@ public class GestorArchivos {
         String linRetorno = "";
         try {
             entradaArchivo = new BufferedReader(new FileReader(
-                    "C:/MisFicheros/"+nombre));
+                    "D:/programacion 2/"+nombre));
             linRetorno = entradaArchivo.readLine();
         } catch (IOException ex) {
             Logger.getLogger(GestorArchivos.class.getName()).log(
@@ -113,5 +114,26 @@ public class GestorArchivos {
         String leido = cargar(nombreArchivo);
         ArrayList<String> retorno = desempaquetador(leido,"#");
         return retorno;
+    }
+    
+    public static String[] exists() {
+    	String[] listado = null;
+        try{
+            File carpeta = new File("D:/programacion 2/");
+
+            listado = carpeta.list();
+            if (listado == null || listado.length == 0) {
+                System.out.println("No existen ContactBooks");
+            }
+            else {
+            	System.out.println("los ContactBooks existentes son:");
+                for (int i = 0; i < listado.length; i++) {
+                    System.out.println(listado[i]);
+                }
+            }
+        }catch (NullPointerException e){
+            System.out.println("ERROR!");
+        }
+		return listado;
     }
 }

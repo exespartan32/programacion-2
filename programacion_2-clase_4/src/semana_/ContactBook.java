@@ -1,11 +1,10 @@
-package semana1;
+package semana_;
 
 import java.util.ArrayList;
 
 public class ContactBook {
 	private String name;
 	private ArrayList<Contact> contacts;
-	private ArrayList<String> listCB;
 	
 	public ContactBook() {
 		//super();
@@ -13,13 +12,8 @@ public class ContactBook {
 		contacts = new ArrayList<Contact>();
 	}
 	
-	public ContactBook(String newNomCon) {
-		listCB = new ArrayList<String>();
-	}
-
-	public void AddNameCB(String CB) {
-		listCB.add(CB);
-		return;
+	public void update(int pos, Contact name) {
+		contacts.set(pos, name);
 	}
 	
 	public String getName() {
@@ -31,9 +25,10 @@ public class ContactBook {
 	
 	public void addContact (Contact c) {
 		contacts.add(c);
-		return;
+		
+		return ;
 	}
-	public void delContact (Contact c) {
+	public void delContact (int c) {
 		contacts.remove(c);
 		return;
 	}
@@ -65,17 +60,4 @@ public class ContactBook {
 		}
 		return st_CB;
 	}	
-	
-	public String ListNameCB(String sep) {
-		String dt = "";
-		for (int i=0;i<listCB.size();i++) {
-			if (i==this.listCB.size()-1) {
-				dt=dt+this.listCB.get(i).toString();
-			}
-			else {
-				dt = dt + this.listCB.get(i).toString()+sep;
-			}	
-		}
-		return dt;	
-	}
 }

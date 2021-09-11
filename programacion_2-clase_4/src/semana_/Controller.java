@@ -1,40 +1,43 @@
-package semana1;
+package semana_;
 
+import java.util.Scanner;
 
 public class Controller {
 	public static void main(String[] args) {
 		
 		ContactBook miCB = null;
+		int conBookReceived;
 	
-	//System.out.println("considere que para guardar un contacto primero tiene que crear la libreta de contactos");
-	//System.out.println("");
+		String[] listData = DataModel.ListCB();
+		System.out.println("");
 	
 	do{		
-		int conBookReceived = View.menu();
+				
+		//DataModel.ListCB();	
+		
+		conBookReceived = 0;
+		System.out.println("");
+		conBookReceived = View.menu();
 		//System.out.println(conBookReceived);
 			
 		if(conBookReceived == 1) {
 			miCB = View.createContactBook(new ContactBook());
 				System.out.println(miCB);
-				
-				DataModel.saveNameCB(miCB);
-				
 				System.out.println("");
-			}
+		}
 		else if (conBookReceived == 2) {				
 			ContactBook miCon = View.addingContactBook(miCB);
 				System.out.println(miCon);
 				DataModel.saveCB(miCon);
 				//String st_contacts = MiContact.toStringSeparador("#");		
-			}
+		}
 		else if (conBookReceived == 3) {			
+				
+			String name = View.listContactBook(listData);
 			
-			String CBName = "unicaLibreta.txt";
-			ContactBook list = DataModel.loadCB(CBName);
-			View.listContactBook(list);
-			System.out.println("");
-			}
-		}while(true);	
-	
+			ContactBook list = DataModel.loadCB(name);
+			View.listContact(list);		
+		}
+		}while(conBookReceived != 0);		
 	}
 }
