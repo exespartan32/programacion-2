@@ -36,8 +36,9 @@ public class Controller_test {
 	        	
 	        	ContactBook list = DataModel.loadCB(name);
 	        	
-	        	list.addContact(miCon);	
-	        	DataModel.saveCB(list);
+	        	list.addContact(miCon);
+
+	        	DataModel.saveCBL(list, name);
 	        	
 	        	System.out.println(list);
 	        	
@@ -64,7 +65,7 @@ public class Controller_test {
 	           	int opt_Contact = View_test.messageOption("Ingrese el número de contacto a eliminar");
 	           	list.delContact(opt_Contact);
 	           	
-	        	DataModel.saveCB(list);
+	        	DataModel.saveCBL(list, name2);
 	        }	
 		}while(option != 0);
 		

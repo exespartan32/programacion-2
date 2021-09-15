@@ -5,14 +5,24 @@ import java.util.ArrayList;
 public class DataModel {
 
 	
+	public static void saveCBL(ContactBook sCB, String name) {
+		String dataContact = sCB.toString("&%&");
+		String nombre = name;
+		
+		String data = dataContact;
+		GestorArchivos.guardar(nombre, data);	
+	}
+	
 	public static void saveCB(ContactBook sCB) {
 		String dataContact = sCB.toString("&%&");
 		String nombre = sCB.getName()+".txt";
 		
 		String data = dataContact;
-		GestorArchivos.guardar(nombre, data);
-		
+		GestorArchivos.guardar(nombre, data);	
 	}
+	
+	
+	
 	
 	public static String[] ListCB() {
 		String[] list = GestorArchivos.exists();

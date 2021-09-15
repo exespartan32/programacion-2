@@ -6,11 +6,22 @@ public class ContactBook {
 	private String name;
 	private ArrayList<Contact> contacts;
 	
+	public void setContacts(ArrayList<Contact> contacts) {
+		this.contacts = contacts;
+	}
+
 	public ContactBook() {
 		//super();
 		//this.name = name;
 		contacts = new ArrayList<Contact>();
 	}
+	
+	public void getContacts() {
+		return;
+	}
+	
+	
+	
 	
 	public void update(int pos, Contact name) {
 		contacts.set(pos, name);
@@ -24,8 +35,7 @@ public class ContactBook {
 	}
 	
 	public void addContact (Contact c) {
-		contacts.add(c);
-		
+		contacts.add(c);		
 		return ;
 	}
 	public void delContact (int c) {

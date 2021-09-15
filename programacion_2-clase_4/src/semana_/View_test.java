@@ -126,14 +126,9 @@ public class View_test {
 			
 		return contact1;	
 	    }
-	    
-	    
-	public static void message(String msg) {
-		System.out.println(msg);
-	}
-	
+
 	public static String usages(String[] list, String ms) {
-		View_test.message(ms);
+		System.out.println(ms);
 		String name = textScanner.nextLine();
 	return name+".txt";
 	}
